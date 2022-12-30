@@ -1,0 +1,12 @@
+.table{
+  background-color: rgb(152, 152, 152);
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px 2px #333;
+}
+th{
+  border-bottom: 1px solid black;
+padding-bottom: 20px;
+padding-top: 20px;
+text-align: center;
+text-transform: uppercase;
+}

@@ -3,24 +3,41 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
+
 import { TicketListComponent } from './components/ticket-list/ticket-list.component';
-import { TicketDetailsComponent } from './components/ticket-details/ticket-details.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
+
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import {MatButtonModule} from '@angular/material/button'
+import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
+import { MatListModule } from "@angular/material/list";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { HeaderComponent } from './components/header/header.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTicketComponent,
     TicketListComponent,
-    TicketDetailsComponent
+    HeaderComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NoopAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatToolbarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
