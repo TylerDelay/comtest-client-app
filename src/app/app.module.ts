@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { TicketListComponent } from './components/ticket-list/ticket-list.component';
+import { TicketListComponent } from './components/tickets/ticket-list/ticket-list.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 
@@ -17,13 +17,15 @@ import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { HeaderComponent } from './components/header/header.component';
 import { TicketsComponent } from './components/tickets/tickets.component';
+import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketListComponent,
     HeaderComponent,
-    TicketsComponent
+    TicketsComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,

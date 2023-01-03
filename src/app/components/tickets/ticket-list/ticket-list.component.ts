@@ -1,14 +1,12 @@
-import { TicketService } from './../../services/ticket.service';
+import { TicketService } from '../../../services/ticket.service';
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from './../../model/ticket.model';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-ticket-list',
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.css']
 })
-export class TicketListComponent implements OnInit{
-
+export class TicketListComponent implements OnInit {
   Order: any = [];
 
   constructor(private apiService: TicketService) {
@@ -22,14 +20,5 @@ export class TicketListComponent implements OnInit{
      this.Order = data;
     });
   }
-
-  // removeOrder(order, index) {
-  //   if (window.confirm('Are you sure?')) {
-  //       this.apiService.deleteOrder(order._id).subscribe((data) => {
-  //         this.Order.splice(index, 1);
-  //       }
-  //     );
-  //   }
-  // }
-
 }
+
