@@ -15,9 +15,15 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 import { HeaderComponent } from './components/header/header.component';
 import { TicketsComponent } from './components/tickets/tickets.component';
 import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,10 @@ import { TicketDetailsComponent } from './components/tickets/ticket-details/tick
     TicketListComponent,
     HeaderComponent,
     TicketsComponent,
-    TicketDetailsComponent
+    TicketDetailsComponent,
+    SidenavComponent,
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,10 @@ import { TicketDetailsComponent } from './components/tickets/ticket-details/tick
     MatIconModule,
     MatInputModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDividerModule,
+    MatMenuModule,
+    MatSidenavModule
 
   ],
   providers: [],
