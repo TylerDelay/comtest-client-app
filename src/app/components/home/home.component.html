@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Home</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="page__content-data position-absolute">
+      <div class="container">
+        <!-- No data message -->
+        <p *ngIf="Order.length <= 0" class="no-data text-center">There is no order added yet!</p>
+
+        <!-- Order list -->
+        <table class="table" *ngIf="Order.length > 0">
+
+            <tr>
+              <th scope="col">etr_cat</th>
+              <th scope="col"> etr_id</th>
+              <th scope="col">title</th>
+              <th scope="col">description</th>
+              <th scope="col center">etr</th>
+            </tr>
+
+          <tbody>
+            <tr *ngFor="let order of Order; let i = index">
+              <td>{{order.etr_cat}}</td>
+              <td>{{order.etr_id}}</td>
+              <td >{{order.title}}</td>
+              <td>{{order.description}}</td>
+              <td>{{order.etr}}</td>
+              <!-- <td ng-init="$parent.total = $parent.total + {order.cost * 1)">${{ order.cost * 1}}</td> -->
+              <td class="text-center edit-block">
+                <span class="edit" [routerLink]="['/edit-order/', order._id]">
+                  <button type="button" class="btn btn-success btn-sm">Edit</button>
+                </span>
+                <span class="delete" (click)="removeOrder(order, i)">
+                  <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
