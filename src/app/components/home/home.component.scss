@@ -21,20 +21,25 @@
       transform: translate(-50%, -50%);
     }
   }
-  .table{
-    background-color: rgb(152, 152, 152);
-    margin-top: -2rem;
-    color: black;
-    font-size: 2rem;
-    /* border-radius: 25px; */
-    /* box-shadow: 1px 1px 10px 2px #333; */
+  table {
+    width: 100%;
   }
-  th{
-    border-bottom: 1px solid black;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  text-align: center;
-  // text-transform: uppercase;
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 20%;
+  }
+
+
+
+  .th-center{
+    text-align: center;
+  }
+  .th-left{
+    text-align: left;
+  }
+  .th-right{
+    text-align: right;
   }
 
 }
