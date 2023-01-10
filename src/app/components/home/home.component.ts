@@ -17,7 +17,7 @@ import { ThisReceiver } from '@angular/compiler';
 })
 export class HomeComponent{
   title = 'tyler_table';
-  displayedColumns: string[] = ['id', 'title', 'description', 'etr'];
+  displayedColumns: string[] = ['etr_id', 'title', 'description', 'etr', 'actions'];
   dataSource: MatTableDataSource<Ticket>
   @ViewChild(MatPaginator) paginator: MatPaginator
   @ViewChild(MatSort) sort: MatSort

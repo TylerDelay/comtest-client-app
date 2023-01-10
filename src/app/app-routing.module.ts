@@ -1,3 +1,4 @@
+import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'allTickets', component: TicketListComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'dashboard', component: DashboardComponent}
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'editTicket', component: TicketDetailsComponent}
 ];
 
 @NgModule({
