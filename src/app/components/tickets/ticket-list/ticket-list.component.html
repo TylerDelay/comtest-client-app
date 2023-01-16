@@ -1,3 +1,7 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Edit ETR Ticket</div>
+  <div class="page__content shadow p-3 position-relative">
+
 <div class="container">
   <!-- No data message -->
   <p *ngIf="Order.length <= 0" class="no-data text-center">There is no order added yet!</p>
@@ -22,7 +26,7 @@
         <td>{{order.etr}}</td>
         <!-- <td ng-init="$parent.total = $parent.total + {order.cost * 1)">${{ order.cost * 1}}</td> -->
         <td class="text-center edit-block">
-          <span class="edit" [routerLink]="['/edit-order/', order._id]">
+          <span class="edit" [routerLink]="['/editTicket']">
             <button type="button" class="btn btn-success btn-sm">Edit</button>
           </span>
           <span class="delete" (click)="removeOrder(order, i)">
@@ -32,4 +36,6 @@
       </tr>
     </tbody>
   </table>
+</div>
+</div>
 </div>

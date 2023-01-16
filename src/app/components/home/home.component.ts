@@ -9,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { Ticket } from 'src/app/model/ticket.model';
 import { ThisReceiver } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,7 @@ export class HomeComponent{
   posts:any
 
 
-  constructor(private apiService: TicketService) {
+  constructor(private apiService: TicketService, private router: Router) {
     this.apiService.findAllTickets().subscribe((data) => {
       console.log(data);
       this.posts = data
@@ -41,6 +42,10 @@ export class HomeComponent{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+//new
+  updateTicket(id: number){
+    this.router.navigate(['/editTicket', id]);
   }
 
   }

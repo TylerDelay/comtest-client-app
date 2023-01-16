@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TicketListComponent } from './components/tickets/ticket-list/ticket-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatTabsModule} from '@angular/material/tabs'
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button'
@@ -28,6 +29,7 @@ import { TicketDetailsComponent } from './components/tickets/ticket-details/tick
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-info.component';
 
 @NgModule({
   declarations: [
@@ -38,16 +40,19 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     TicketDetailsComponent,
     SidenavComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    TicketInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule ,
     NoopAnimationsModule,
     FormsModule,
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
+    MatTabsModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
