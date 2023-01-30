@@ -23,6 +23,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatTreeModule} from '@angular/material/tree';
 import { HeaderComponent } from './components/header/header.component';
 import { TicketsComponent } from './components/tickets/tickets.component';
 import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
@@ -63,7 +64,8 @@ import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-inf
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTreeModule
 
 
   ],

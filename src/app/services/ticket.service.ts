@@ -17,7 +17,7 @@ export class TicketService {
 
   findAllTickets(){
     // let url = `${baseUrl}`;
-    return this.http.get(`${this.baseUri}`);
+    return this.http.get<Ticket[]>(`${this.baseUri}`);
   }
   // findAllTickets(): Observable<Ticket[]>{
   //   let url = `${baseUrl}`;
