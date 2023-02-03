@@ -31,6 +31,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-info.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-inf
     MatSortModule,
     MatTableModule,
     MatFormFieldModule,
-    MatTreeModule
+    MatTreeModule,
+    AgGridModule
 
 
   ],
