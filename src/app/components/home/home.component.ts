@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent{
   title = 'tyler_table';
-  displayedColumns: string[] = ['etr_id', 'title', 'description', 'etr', 'actions'];
+  displayedColumns: string[] = ['etr_id', 'title', 'alias_etr_id', 'description', 'etr_category', 'etr_type', 'etr_subtype', 'actions'];
   dataSource: MatTableDataSource<Ticket>
   @ViewChild(MatPaginator) paginator: MatPaginator
   @ViewChild(MatSort) sort: MatSort
@@ -46,6 +46,9 @@ export class HomeComponent{
 //new
   updateTicket(id: number){
     this.router.navigate(['/editTicket', id]);
+  }
+  addTicket(){
+    this.router.navigate(['./dashboard']);
   }
 
   }

@@ -5,6 +5,10 @@
 
 
 <div class="mat-elevation-z8">
+  <mat-form-field appearance="fill">
+    <mat-label>Filter Table</mat-label>
+    <input matInput search (keyup)="applyFilter($event)" placeholder="Search" #input>
+  </mat-form-field>
   <table mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
@@ -15,21 +19,40 @@
 
     <!-- Progress Column -->
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
       <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+    </ng-container>
+
+
+    <!-- alias_etr_id Column -->
+    <ng-container matColumnDef="alias_etr_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Alias ETR ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.alias_etr_id}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> description </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
       <td mat-cell *matCellDef="let row"> {{row.description}} </td>
     </ng-container>
 
-    <!-- Fruit Column -->
-    <ng-container matColumnDef="etr">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> etr </th>
-      <td mat-cell *matCellDef="let row"> {{row.etr}} </td>
+    <!-- etr_category Column -->
+    <ng-container matColumnDef="etr_category">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ETR Category </th>
+      <td mat-cell *matCellDef="let row"> {{row.etr_category}} </td>
     </ng-container>
+
+       <!-- etr_category Column -->
+       <ng-container matColumnDef="etr_type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ETR Type </th>
+        <td mat-cell *matCellDef="let row"> {{row.etr_type}} </td>
+      </ng-container>
+
+        <!-- etr_category Column -->
+        <ng-container matColumnDef="etr_subtype">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ETR SubType </th>
+          <td mat-cell *matCellDef="let row"> {{row.etr_subtype}} </td>
+        </ng-container>
 
     <ng-container matColumnDef="actions">
       <th mat-header-cell  *matHeaderCellDef > Actions </th>
@@ -54,11 +77,9 @@
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>
   </table>
-  <mat-form-field appearance="fill">
-    <mat-label>Filter Table</mat-label>
-    <input matInput search (keyup)="applyFilter($event)" placeholder="Search" #input>
-  </mat-form-field>
-  <mat-paginator [pageSizeOptions]="[3, 6]" aria-label="Select page of users"></mat-paginator>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="addTicket()">Add</button>
+  <mat-paginator [pageSizeOptions]="[3, 5, 10]" aria-label="Select page of users"></mat-paginator>
 </div>
 </div>
 <!-- </div>

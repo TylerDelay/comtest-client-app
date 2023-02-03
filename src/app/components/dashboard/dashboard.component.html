@@ -1,38 +1,116 @@
-<table mat-table #outerSort="matSort" [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8" matSort>
-	<ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-		<th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
-		<td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-	</ng-container>
+<div class="container-fluid page">
+  <h1 class="d-flex page__box p-3 mt-2">Add New ETR</h1>
+<div class="row justify-content-center">
+  <div class="col-md-4 register-order">
+    <!-- form card register -->
+    <div class="card-body">
+      <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="inputTitle">Title </label>
+          <input class="form-control" type="text" formControlName="title">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
+            Title is required.
+          </div>
+        </div>
 
-	<!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-	<ng-container matColumnDef="expandedDetail">
-		<td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-			<div class="example-element-detail" *ngIf="element.children?.data.length" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-				<div class="inner-table mat-elevation-z8" *ngIf="expandedElement">
-          <mat-form-field>
-            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-          </mat-form-field>
-          <table #innerTables mat-table #innerSort="matSort" [dataSource]="element.children" matSort>
-            <ng-container matColumnDef="{{innerColumn}}" *ngFor="let innerColumn of innerDisplayedColumns">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> {{innerColumn}} </th>
-              <td mat-cell *matCellDef="let element"> {{element[innerColumn]}} </td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="innerDisplayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: innerDisplayedColumns;"></tr>
-          </table>
-				</div>
-			</div>
-		</td>
-	</ng-container>
+        <div class="form-group1">
+          <label for="inputDescription">ETR Details</label>
+          <input class="form-control" type="text" formControlName="description">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
+            Enter your ETR Details.
+          </div>
+          <!-- <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.pattern">
+            Enter valid ETR Details.
+          </div> -->
+        </div>
 
-	<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-	<tr mat-row *matRowDef="let element; columns: columnsToDisplay;" [class.example-element-row]="element.children?.data.length"
-	 [class.example-expanded-row]="expandedElement === element" (click)="toggleRow(element)">
-	</tr>
-	<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-</table>
+        <div class="form-group1">
+          <label for="inputEtr_category">ETR Category </label>
+          <input class="form-control" type="text" formControlName="etr_category">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.etr_category.errors?.required">
+            Please select a ETR Category.
+          </div>
+        </div>
 
+        <div class="form-group">
+          <label for="inputEtr_type">ETR Type </label>
+          <input class="form-control" type="text" formControlName="etr_type">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.etr_type.errors?.required">
+            Please select a ETR Type.
+          </div>
+        </div>
 
-<!-- Copyright 2019 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+        <div class="form-group">
+          <label for="inputEtr_subtype">ETR SubType </label>
+          <input class="form-control" type="text" formControlName="etr_subtype">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.etr_subtype.errors?.required">
+            Please select a ETR SubType.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputReporter">Reporter </label>
+          <input class="form-control" type="text" formControlName="reporter">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.reporter.errors?.required">
+            Please select a Reporter.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputRequestor">Requestor </label>
+          <input class="form-control" type="text" formControlName="requestor">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.requestor.errors?.required">
+            Please select a Requestor.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputCustomer">Customer</label>
+          <input class="form-control" type="text" formControlName="customer">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.customer.errors?.required">
+            Customer is required.
+          </div>
+          <!-- <div class="invalid-feedback" *ngIf="submitted && myForm.cost.errors?.pattern">
+            Enter Numbers Only
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="inputPriority">Priority </label>
+          <input class="form-control" type="text" formControlName="priority">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.priority.errors?.required">
+            Please select a Priority.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3">Status</label>
+          <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+            formControlName="status">
+            <option value="">Choose...</option>
+            <option *ngFor="let statusProfile of StatusProfile" value="{{statusProfile}}">{{statusProfile}}
+            </option>
+          </select>
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.status.errors?.required">
+            Choose status of ETR Ticket.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>
+        </div>
+      </form>
+
+    </div>
+  </div><!-- form card register -->
+</div>

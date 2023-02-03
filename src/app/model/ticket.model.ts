@@ -36,7 +36,7 @@ export class Ticket {
   parent_id: number;
   createdAt : Date;
   updatedAt : Date;
-  children?: Ticket[] | MatTableDataSource<Ticket>;;
+  children?: Ticket[] ;
 
 }
 

@@ -15,15 +15,19 @@ export class TicketService {
   constructor(private http: HttpClient) { }
 
 
-  findAllTickets(){
-    // let url = `${baseUrl}`;
-    return this.http.get<Ticket[]>(`${this.baseUri}`);
-  }
-  // findAllTickets(): Observable<Ticket[]>{
-  //   let url = `${baseUrl}`;
-  //   return this.http.get<Ticket[]>(url);
+  // findAllTickets(){
+  //   // let url = `${baseUrl}`;
+  //   return this.http.get<Ticket[]>(`${this.baseUri}`);
   // }
+  findAllTickets(): Observable<Ticket[]>{
+    let url = `${this.baseUri}`;
+    return this.http.get<any[]>(url);
+  }
 
+  createTicket(data: any): Observable<any>{
+    let url = `${this.baseUri}`;
+    return this.http.post(url,data);
+  }
   getOrder(id): Observable<any> {
     let url = `${this.baseUri}/${id}`;
     return this.http.get(url, {headers: this.headers}).pipe(
