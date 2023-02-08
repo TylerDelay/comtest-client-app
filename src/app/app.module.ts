@@ -32,6 +32,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-info.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { TreeComponentComponent } from './tree-component/tree-component.component';
+import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { AgGridModule } from 'ag-grid-angular';
     SidenavComponent,
     HomeComponent,
     DashboardComponent,
-    TicketInfoComponent
+    TicketInfoComponent,
+    TreeComponentComponent,
+    EditETRComponent
   ],
   imports: [
     BrowserModule,

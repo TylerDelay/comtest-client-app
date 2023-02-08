@@ -28,7 +28,7 @@ export class TicketService {
     let url = `${this.baseUri}`;
     return this.http.post(url,data);
   }
-  getOrder(id): Observable<any> {
+  getEtrTicket(id): Observable<any> {
     let url = `${this.baseUri}/${id}`;
     return this.http.get(url, {headers: this.headers}).pipe(
       map((res: Response) => {
@@ -38,7 +38,7 @@ export class TicketService {
     )
   }
     // Update Order
-    updateOrder(id, data): Observable<any> {
+    updateEtrTicket(id, data): Observable<any> {
       let url = `${this.baseUri}/${id}`;
       return this.http.put(url, data, { headers: this.headers }).pipe(
         catchError(this.errorMgmt)

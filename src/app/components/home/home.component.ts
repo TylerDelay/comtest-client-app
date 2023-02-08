@@ -45,7 +45,7 @@ export class HomeComponent{
   }
 //new
   updateTicket(id: number){
-    this.router.navigate(['/editTicket', id]);
+    this.router.navigate(['/editETR', id]);
   }
   addTicket(){
     this.router.navigate(['./dashboard']);

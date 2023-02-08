@@ -1,3 +1,5 @@
+import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.component';
+import { TreeComponentComponent } from './tree-component/tree-component.component';
 import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-info.component';
 import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -11,7 +13,9 @@ const routes: Routes = [
   { path: 'allTickets', component: TicketListComponent},
   { path: 'home', component: HomeComponent},
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'editTicket/:id', component: TicketInfoComponent}
+  { path: 'editTicket/:id', component: TicketInfoComponent},
+  { path: 'tree', component: TreeComponentComponent},
+  { path: 'editETR/:id', component: EditETRComponent}
 ];
 
 @NgModule({

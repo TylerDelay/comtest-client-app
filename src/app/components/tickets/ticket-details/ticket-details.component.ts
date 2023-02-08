@@ -47,7 +47,7 @@ export class TicketDetailsComponent implements OnInit {
   }
 
   getOrder(id) {
-    this.apiService.getOrder(id).subscribe(data => {
+    this.apiService.getEtrTicket(id).subscribe(data => {
       this.editForm.setValue({
         name: data['name'],
         description: data['description'],
@@ -73,7 +73,7 @@ export class TicketDetailsComponent implements OnInit {
     } else {
       if (window.confirm('Are you sure?')) {
         let id = this.actRoute.snapshot.paramMap.get('id');
-        this.apiService.updateOrder(id, this.editForm.value)
+        this.apiService.updateEtrTicket(id, this.editForm.value)
           .subscribe(res => {
             this.router.navigateByUrl('/orders-list');
             console.log('Content updated successfully!')
