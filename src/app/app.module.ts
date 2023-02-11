@@ -34,6 +34,7 @@ import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-inf
 import { AgGridModule } from 'ag-grid-angular';
 import { TreeComponentComponent } from './tree-component/tree-component.component';
 import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.component';
+import { TestNestComponent } from './components/test-nest/test-nest.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.compone
     DashboardComponent,
     TicketInfoComponent,
     TreeComponentComponent,
-    EditETRComponent
+    EditETRComponent,
+    TestNestComponent
   ],
   imports: [
     BrowserModule,

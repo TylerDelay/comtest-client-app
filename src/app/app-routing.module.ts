@@ -1,3 +1,4 @@
+import { TestNestComponent } from './components/test-nest/test-nest.component';
 import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.component';
 import { TreeComponentComponent } from './tree-component/tree-component.component';
 import { TicketInfoComponent } from './components/tickets/ticket-info/ticket-info.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'editTicket/:id', component: TicketInfoComponent},
   { path: 'tree', component: TreeComponentComponent},
-  { path: 'editETR/:id', component: EditETRComponent}
+  { path: 'editETR/:id', component: EditETRComponent},
+  { path: 'test', component: TestNestComponent}
 ];
 
 @NgModule({
