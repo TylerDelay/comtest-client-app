@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col-md-4 register-order">
+  <div class="register-order">
     <!-- form card register -->
     <div class="card card-outline-secondary">
       <div class="card-header">
@@ -17,10 +17,10 @@
           </div>
 
           <div class="form-group">
-            <label for="inputDescription">Description</label>
-            <input class="form-control" type="text" formControlName="description">
-            <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
-              Description is required.
+            <label for="inputEtr_type">ETR Type</label>
+            <input class="form-control" type="text" formControlName="etr_type">
+            <div class="invalid-feedback" *ngIf="submitted && myForm.etr_type.errors?.required">
+              ETR Type is required.
             </div>
           </div>
 
@@ -31,17 +31,6 @@
               Description is required.
             </div>
           </div>
-
-<!--
-          <div class="form-group">
-            <label for="inputEtr_category">Etr_category</label>
-            <input class="form-control" type="text" formControlName="etr_category">
-            <div class="invalid-feedback" *ngIf="submitted && myForm.etr_category.errors?.required">
-              Etr_category is required.
-            </div>
-          </div> -->
-
-
 
           <div class="form-group">
             <label for="inputPassword3">Status</label>
