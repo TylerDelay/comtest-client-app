@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   submitted = false;
   orderForm: FormGroup;
   StatusProfile:any = ['To-Do', 'In-Progress', 'Complete']
+  EtrType:any = ['DEFECT', 'ENHANCEMENT', 'TASK', 'APPROVAL', 'SAMPLE', 'OTHER']
   //dataSource: MatTableDataSource<Ticket>;
   ticketData: any[];
   columnsToDisplay = ['etr_id', 'title', 'description'];

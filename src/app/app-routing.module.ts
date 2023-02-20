@@ -1,3 +1,4 @@
+import { TicketsComponent } from './../../../ComtestNetworks_Server/Client/comtest-client-app/src/app/components/tickets/tickets.component';
 import { TestNestComponent } from './components/test-nest/test-nest.component';
 import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.component';
 import { TreeComponentComponent } from './tree-component/tree-component.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'editTicket/:id', component: TicketInfoComponent},
   { path: 'tree', component: TreeComponentComponent},
   { path: 'editETR/:id', component: EditETRComponent},
-  { path: 'test', component: TestNestComponent}
+  { path: 'test', component: TestNestComponent},
+  { path: 'tickets/:id', component: TicketsComponent },
 ];
 
 @NgModule({

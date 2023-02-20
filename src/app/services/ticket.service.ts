@@ -28,6 +28,11 @@ export class TicketService {
     let url = `${this.baseUri}`;
     return this.http.post(url,data);
   }
+
+  createComment(ticketId, data): Observable<any>{
+    let url = `${this.baseUri}/${ticketId}/createComment`;
+    return this.http.post(url,data);
+  }
   getEtrTicket(id): Observable<any> {
     let url = `${this.baseUri}/${id}`;
     return this.http.get(url, {headers: this.headers}).pipe(

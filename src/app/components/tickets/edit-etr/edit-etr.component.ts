@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Ticket } from 'src/app/model/ticket.model';
 import { TicketService } from 'src/app/services/ticket.service';
+import { Comment } from 'src/app/model/comment.modal';
 
 @Component({
   selector: 'app-edit-etr',
@@ -13,6 +14,7 @@ export class EditETRComponent implements OnInit {
   submitted = false;
   editForm: FormGroup;
   orderData: Ticket[];
+  ticketComments: Comment[];
   OrderProfile: any = ['To-Do', 'In-Progress', 'Complete']
 
   constructor(
@@ -39,6 +41,8 @@ export class EditETRComponent implements OnInit {
         priority: data['priority'],
         status: data['status']
       });
+      this.orderData = data;
+      this.ticketComments = data.comments;
     });
     //this.getEtr(id);
     this.editForm = this.fb.group({

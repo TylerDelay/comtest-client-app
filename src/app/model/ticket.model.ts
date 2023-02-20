@@ -1,5 +1,5 @@
 import { MatTableDataSource } from "@angular/material/table";
-
+import { Comment } from "./comment.modal";
 export class Ticket {
 
   id: number;
@@ -27,7 +27,7 @@ export class Ticket {
   eco_record : string;
   child_etr_list : string;
   check_list : string;
-  comments: string;
+  // comments: string;
   label : string;
   etr_dependency : string;
   etr_duplicate: string;
@@ -37,6 +37,7 @@ export class Ticket {
   createdAt : Date;
   updatedAt : Date;
   children?: Ticket[] | MatTableDataSource<Ticket> ;
+  comments?: Comment [];
 
 }
 

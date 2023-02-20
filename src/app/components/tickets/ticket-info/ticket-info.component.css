@@ -1,7 +1,61 @@
-.mat-tab {
+/* comment section styles */
+.comment-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  padding: 1rem 2rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.comment-list li {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-list li p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.comment-list li p:first-child {
+  margin-bottom: 10px;
+}
+
+.comment-list li p span.user {
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.btn-success:hover {
+  background-color: #449d44;
+  border-color: #449d44;
 }
