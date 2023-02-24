@@ -32,6 +32,10 @@
   font-weight: bold;
   margin-bottom: 5px;
 }
+.form-group input[type="textarea"] {
+  resize: vertical;
+}
+
 
 .form-control {
   display: block;

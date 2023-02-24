@@ -5,11 +5,30 @@
     <div class="form-group">
       <div class="form-group">
         <label for="inputComment">Title</label>
-        <input class="form-control" type="textera" formControlName="comment">
+        <textarea matInput class="form-control" formControlName="comment"></textarea>
         <div class="invalid-feedback" *ngIf="submitted && myForm.comment.errors?.required">
           Comment is required.
         </div>
       </div>
+
+      <div class="form-group2">
+        <div>
+          <label>
+            <input type="radio" value="lesson" formControlName="tag"> lesson
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" value="risk" formControlName="tag"> risk
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" value="requirement" formControlName="tag"> requirement
+          </label>
+        </div>
+      </div>
+
       <button class="btn btn-success btn-lg btn-block" type="submit" click="onSubmit()">Add Comment</button>
     </div>
   </form>
@@ -17,6 +36,9 @@
     <li *ngFor="let comment of comment">
       <p>{{comment.createdAt.slice(0, 16)}} <span class="user">{{ comment.user }}</span> said:</p>
       <p>{{ comment.comment }}</p>
+      <mat-chip-listbox>
+      <mat-chip *ngIf="comment.tag !== ''">{{comment.tag}}</mat-chip>
+    </mat-chip-listbox>
     </li>
   </ul>
 </div>
