@@ -1,57 +1,127 @@
+<div class="container-fluid page">
+  <h1 class="d-flex page__box p-3 mt-2">Edit ETR</h1>
 <div class="row justify-content-center">
-  <div class="register-order">
+  <div>
     <!-- form card register -->
-    <div class="card card-outline-secondary">
-      <div class="card-header">
-        <h3 class="mb-0">Edit Order</h3>
-      </div>
-      <div class="card-body">
-        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="card-body">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="inputTitle">Title </label>
+          <input class="form-control" type="text" formControlName="title">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
+            Title is required.
+          </div>
+        </div>
 
-          <div class="form-group">
-            <label for="inputTitle">Title</label>
-            <input class="form-control" type="text" formControlName="title">
-            <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
-              Title is required.
+        <mat-tab-group>
+          <mat-tab label="General">
+            <div class="form-group1">
+              <label for="inputDescription">ETR Details</label>
+              <textarea class="form-control" type="text" formControlName="description"></textarea>
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
+                Enter your ETR Details.
+              </div>
+              <!-- <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.pattern">
+                Enter valid ETR Details.
+              </div> -->
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputEtr_type">ETR Type</label>
-            <input class="form-control" type="text" formControlName="etr_type">
-            <div class="invalid-feedback" *ngIf="submitted && myForm.etr_type.errors?.required">
-              ETR Type is required.
+            <div class="form-group2">
+              <label for="inputEtr_category">ETR Category </label>
+              <input class="form-control" type="text" formControlName="etr_category">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.etr_category.errors?.required">
+                Please select a ETR Category.
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="inputDescription">Description</label>
-            <input class="form-control" type="text" formControlName="description">
-            <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
-              Description is required.
+            <div class="form-group3">
+              <label for="inputEtr_type">ETR Type </label>
+              <input class="form-control" type="text" formControlName="etr_type">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.etr_type.errors?.required">
+                Please select a ETR Type.
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="inputPassword3">Status</label>
-            <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
-              formControlName="status">
-              <option value="">Choose...</option>
-              <option *ngFor="let orderProfile of OrderProfile" value="{{orderProfile}}">{{orderProfile}}
-              </option>
-            </select>
-            <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.status.errors?.required">
-              Choose status.
+            <div class="form-group4">
+              <label for="inputEtr_subtype">ETR SubType </label>
+              <input class="form-control" type="text" formControlName="etr_subtype">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.etr_subtype.errors?.required">
+                Please select a ETR SubType.
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
-          </div>
-        </form>
-      </div>
-    </div><!-- form  -->
-  </div>
+          </mat-tab>
+          <mat-tab label="ECR Details">
+            <div class="form-group5">
+              <label for="inputReporter">Reporter </label>
+              <input class="form-control" type="text" formControlName="reporter">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.reporter.errors?.required">
+                Please select a Reporter.
+              </div>
+            </div>
+
+            <div class="form-group6">
+              <label for="inputRequestor">Requestor </label>
+              <input class="form-control" type="text" formControlName="requestor">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.requestor.errors?.required">
+                Please select a Requestor.
+              </div>
+            </div>
+
+            <div class="form-group7">
+              <label for="inputCustomer">Customer</label>
+              <input class="form-control" type="text" formControlName="customer">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.customer.errors?.required">
+                Customer is required.
+              </div>
+              <!-- <div class="invalid-feedback" *ngIf="submitted && myForm.cost.errors?.pattern">
+                Enter Numbers Only
+              </div> -->
+            </div> </mat-tab>
+          <mat-tab label="Third">
+            <div class="form-group8">
+              <label for="inputPriority">Priority </label>
+              <input class="form-control" type="text" formControlName="priority">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.priority.errors?.required">
+                Please select a Priority.
+              </div>
+            </div>
+
+            <div class="form-group9">
+              <label for="inputPassword3">Status</label>
+              <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+                formControlName="status">
+                <option value="">Choose...</option>
+                <option *ngFor="let statusProfile of OrderProfile" value="{{statusProfile}}">{{statusProfile}}
+                </option>
+              </select>
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.status.errors?.required">
+                Choose status of ETR Ticket.
+              </div>
+            </div>
+
+          </mat-tab>
+        </mat-tab-group>
+
+
+
+        <div class="form-group10">
+          <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div><!-- form card register -->
   <app-ticket-info [comment]="ticketComments"></app-ticket-info>
 </div>
+
+

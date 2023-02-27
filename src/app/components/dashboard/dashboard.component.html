@@ -37,12 +37,7 @@
 
         <div class="form-group3">
           <label for="inputEtr_type">ETR Type </label>
-          <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
-            formControlName="status">
-            <option value="">Select...</option>
-            <option *ngFor="let etrType of EtrType" value="{{etrType}}">{{etrType}}
-            </option>
-          </select>
+          <input class="form-control" type="text" formControlName="etr_type">
           <!-- error -->
           <div class="invalid-feedback" *ngIf="submitted && myForm.etr_type.errors?.required">
             Please select a ETR Type.
