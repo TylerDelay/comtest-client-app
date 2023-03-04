@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'editETR/:id', component: EditETRComponent},
   { path: 'test', component: TestNestComponent},
   { path: 'tickets/:id', component: TicketsComponent },
+  { path: 'editChild/:id', component: EditETRComponent},
 ];
 
 @NgModule({

@@ -27,14 +27,14 @@
                 Enter valid ETR Details.
               </div> -->
             </div>
-            <div class="form-group2">
+            <!-- <div class="form-group2">
               <label for="inputEtr_category">ETR Category </label>
               <input class="form-control" type="text" formControlName="etr_category">
-              <!-- error -->
+
               <div class="invalid-feedback" *ngIf="submitted && myForm.etr_category.errors?.required">
                 Please select a ETR Category.
               </div>
-            </div>
+            </div> -->
 
             <div class="form-group3">
               <label for="inputEtr_type">ETR Type </label>
@@ -108,6 +108,33 @@
                 Choose status of ETR Ticket.
               </div>
             </div>
+            <!-- <mat-list role="list">
+              <label>Children tickets:</label>
+              <mat-list-item role="listitem" *ngFor="let ticket of childrenTickets">
+                <div style="display: flex; align-items: center;">
+                  <span>{{ ticket.etr_id }}</span>
+                  <span style="margin-left: 10px;">{{ ticket.status }}</span>
+                </div>
+              </mat-list-item>
+            </mat-list> -->
+            <mat-list role="list">
+              <label>Children tickets:</label>
+              <mat-list-item role="listitem" *ngFor="let ticket of childrenTickets">
+                <ng-container>
+                <div style="display: flex; align-items: center;">
+                  <button type="button" mat-icon-button (click)="goTOChild(ticket.id)">
+                    <span>{{ ticket.etr_id }}</span>
+                    <span style="margin-left: 10px;">{{ ticket.id }}</span>
+                  </button>
+
+
+
+                </div>
+              </ng-container>
+              </mat-list-item>
+            </mat-list>
+
+
 
           </mat-tab>
         </mat-tab-group>

@@ -105,6 +105,19 @@
             Choose status of ETR Ticket.
           </div>
         </div>
+        <div class="form-group11">
+          <label for="inputParent">Parent</label>
+          <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+            formControlName="parent_id" [(ngModel)]="selectedParentTicketId">
+            <option value="">None</option>
+            <option *ngFor="let ticket of tickets" value="{{ticket.id}}">{{ticket.etr_id}}
+            </option>
+          </select>
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.parent_id.errors?.required">
+            Choose status of ETR Ticket.
+          </div>
+        </div>
 
         <div class="form-group10">
           <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>

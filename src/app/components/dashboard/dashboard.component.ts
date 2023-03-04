@@ -27,15 +27,22 @@ export class DashboardComponent implements OnInit {
   //dataSource: MatTableDataSource<Ticket>;
   ticketData: any[];
   columnsToDisplay = ['etr_id', 'title', 'description'];
-
+  selectedParentTicketId: number | null = null;
+  tickets: any[] =[];
 
   constructor(public fb: FormBuilder, private router: Router, private ngZone: NgZone, private apiService: TicketService ) {
 
   }
 
   ngOnInit() {
+    this.apiService.findAllTickets().subscribe(
+      (response) => {
+        this.tickets = response;
+        console.log(this.tickets);
+      }
+    );
     this.mainForm();
-    console.log(this.orderForm);
+    // console.log(this.tickets);
   }
 
   mainForm() {
@@ -50,7 +57,8 @@ export class DashboardComponent implements OnInit {
       customer: ['', [Validators.required]],
       priority: ['', [Validators.required]],
       // etr_id: ['', [Validators.required]],
-      status: ['', [Validators.required]]
+      status: ['', [Validators.required]],
+      parent_id: this.selectedParentTicketId
       // createdAt: ['', [Validators.required]]
     })
   }
@@ -68,7 +76,9 @@ export class DashboardComponent implements OnInit {
     onSubmit() {
     this.submitted = true;
     if (!this.orderForm.valid) {
+      console.log("FAILEDDD");
       return false;
+
     } else {
       this.apiService.createTicket(this.orderForm.value).subscribe({
         next:(res) => {

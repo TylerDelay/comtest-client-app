@@ -13,7 +13,9 @@ import { Comment } from 'src/app/model/comment.modal';
 export class EditETRComponent implements OnInit {
   submitted = false;
   editForm: FormGroup;
-  orderData: Ticket[];
+  orderData: any;
+  childrenTickets: Ticket[];
+
   ticketComments: Comment[];
   OrderProfile: any = ['To-Do', 'In-Progress', 'Complete']
 
@@ -27,8 +29,10 @@ export class EditETRComponent implements OnInit {
   ngOnInit() {
    // this.updateEtr();
     console.log(this.actRoute.snapshot.paramMap.get('id'))
-    this.apiService.getEtrTicket(this.actRoute.snapshot.paramMap.get('id')).subscribe(data => {
+    this.apiService.getEtrTicket(this.actRoute.snapshot.paramMap.get('id')).subscribe((data: Ticket) => {
       console.log()
+      this.orderData = data;
+      this.childrenTickets = data.children;
       this.editForm.setValue({
         title: data['title'],
         description: data['description'],
@@ -41,7 +45,9 @@ export class EditETRComponent implements OnInit {
         priority: data['priority'],
         status: data['status']
       });
-      this.orderData = data;
+      // this.orderData = data;
+
+      console.log("TESTTTTT= ", this.orderData);
       this.ticketComments = data.comments;
     });
     //this.getEtr(id);
@@ -120,5 +126,8 @@ export class EditETRComponent implements OnInit {
       }
     }
   }
-
+  goTOChild(childId: string) {
+    this.router.navigate(['/editChild', childId]);
+    console.log("THIS IS THE ID I SEE: ", childId);
+  }
 }

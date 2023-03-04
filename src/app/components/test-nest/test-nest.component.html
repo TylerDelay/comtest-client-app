@@ -3,7 +3,7 @@
   <!-- <div class="page__content shadow p-3 position-relative">
     <div class="page__content-data position-absolute"> -->
 
-
+<!--
 <div class="mat-elevation-z8">
   <mat-form-field appearance="fill">
     <mat-label>Filter Table</mat-label>
@@ -29,7 +29,7 @@
 							<td mat-cell *matCellDef="let address"> {{address[innerColumn]}} </td>
 						</ng-container>
 
-						<!-- <ng-container matColumnDef="expandedExpandedDetail">
+						<ng-container matColumnDef="expandedExpandedDetail">
 							<td mat-cell *matCellDef="let address" [attr.colspan]="innerInnerDisplayedColumns.length">
 								<div class="example-element-detail" [@detailExpand]="address?.expanded" *ngIf="address?.expanded">
 									<div style="width: 100%;">
@@ -49,15 +49,15 @@
 									</div>
 								</div>
 							</td>
-						</ng-container> -->
+						</ng-container>
 
 						<tr mat-header-row *matHeaderRowDef="innerDisplayedColumns"></tr>
 						<tr mat-row *matRowDef="let ticket; columns: innerDisplayedColumns;"
 							[class.example-element-row]="ticket.children?.length" [class.example-expanded-row]="ticket?.expanded"
 							(click)="ticket.expanded = !ticket?.expanded">
-						<!-- </tr>
+						</tr>
 						<tr mat-row *matRowDef="let row; columns: ['expandedExpandedDetail']" class="example-detail-row">
-						</tr> -->
+						</tr>
 					</table>
 				</div>
 			</div>
@@ -72,8 +72,6 @@
 	<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>
 <mat-paginator [pageSizeOptions]="[3, 5, 10]" aria-label="Select page of users"></mat-paginator>
+</div> -->
 </div>
-</div>
-<!-- Copyright 2019 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+
