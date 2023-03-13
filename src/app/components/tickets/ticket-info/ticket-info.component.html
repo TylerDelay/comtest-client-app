@@ -5,7 +5,8 @@
     <div class="form-group">
       <div class="form-group">
         <label for="inputComment">Title</label>
-        <textarea matInput class="form-control" formControlName="comment"></textarea>
+        <!-- <textarea matInput class="form-control" formControlName="comment"></textarea> -->
+        <quill-editor formControlName="comment"></quill-editor>
         <div class="invalid-feedback" *ngIf="submitted && myForm.comment.errors?.required">
           Comment is required.
         </div>
@@ -36,7 +37,7 @@
   <ul class="comment-list">
     <li *ngFor="let comment of comment">
       <p>{{comment.createdAt.slice(0, 16)}} <span class="user">{{ comment.user }}</span> said:</p>
-      <p>{{ comment.comment }}</p>
+      <p [innerHTML]="comment.comment" ngxQuill></p>
       <mat-chip-listbox>
       <mat-chip *ngIf="comment.tag !== ''">{{comment.tag}}</mat-chip>
     </mat-chip-listbox>

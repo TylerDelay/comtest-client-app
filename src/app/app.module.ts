@@ -35,6 +35,7 @@ import { TreeComponentComponent } from './tree-component/tree-component.componen
 import { EditETRComponent } from './components/tickets/edit-etr/edit-etr.component';
 import { TestNestComponent } from './components/test-nest/test-nest.component';
 import {MatChipsModule} from '@angular/material/chips'
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import {MatChipsModule} from '@angular/material/chips'
     MatTableModule,
     MatFormFieldModule,
     MatTreeModule,
-    MatChipsModule
+    MatChipsModule,
+    QuillModule.forRoot()
 
 
   ],
